@@ -1,7 +1,8 @@
-import  os, uuid
+import  os
+import uuid
 import boto3
 from botocore.exceptions import ClientError
-from boto3.s3.transfer import S3UploadFailedError
+
 
 # AK: AKIASISLBULHKW7MSINE 
 # Pass: rgrySuzQswquN2pFq5ba6Bqh+nG7EOQhV/kDekv2

@@ -64,7 +64,7 @@ if __name__ == "__main__":
     data = generate_bmw_telemetry()
 
     args = argparse.ArgumentParser()
-    args.add_argument("--file_format", type=str, default="JSON", help="File format: JSON or CSV")
+    args.add_argument("--file-format", type=str, default="JSON", help="File format: JSON or CSV")
     args = args.parse_args()
 
     if args.file_format.upper() == "JSON":
