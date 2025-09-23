@@ -3,7 +3,6 @@ import uuid
 import boto3
 from botocore.exceptions import ClientError
 
-
 # AK: AKIASISLBULHKW7MSINE 
 # Pass: rgrySuzQswquN2pFq5ba6Bqh+nG7EOQhV/kDekv2
 
@@ -51,6 +50,7 @@ if __name__ == "__main__":
     """ 
     # Create an S3 resource
     s3_resource = boto3.resource("s3")
+    listed_resources = s3_resource.list_buckets()
     bucket_name = create_bucket(s3_resource=s3_resource)
 
     if bucket_name:

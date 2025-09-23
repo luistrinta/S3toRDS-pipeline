@@ -61,24 +61,26 @@ def generate_bmw_telemetry(num_records=20, start_time=None, interval_minutes=15)
 # Example usage:
 if __name__ == "__main__":
     DIRECTORY = "./files/"
-    data = generate_bmw_telemetry()
-
+    
     args = argparse.ArgumentParser()
     args.add_argument("--file-format", type=str, default="JSON", help="File format: JSON or CSV")
+    args.add_argument("--file-number",type=int, default=1,help="Declare the number of files to generate")
     args = args.parse_args()
-
+    print(args.file_number)
     if args.file_format.upper() == "JSON":
-        df = pd.DataFrame.from_dict(data)
-        file_name =f"generated_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
-        
-        print(f"File name is:{file_name} ")
-        df.to_json(DIRECTORY+file_name, orient="records", lines=True)
+        for i in range(args.file_number):
+            data = generate_bmw_telemetry()
+            df = pd.DataFrame.from_dict(data)
+            file_name =f"generated_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{i}.json"
+            print(f"File name is:{file_name} ")
+            df.to_json(DIRECTORY+file_name, orient="records", lines=True)
     elif args.file_format.upper() == "CSV":
-        df = pd.DataFrame.from_dict(data)
-        file_name =f"generated_data_{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.csv"
-    
-        print(f"File name is:{file_name} ")
-        df.to_csv(DIRECTORY+file_name)
+        for i in range(args.file_number):       
+            data = generate_bmw_telemetry()     
+            df = pd.DataFrame.from_dict(data)
+            file_name =f"generated_data_{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}_{i}.csv"
+            print(f"File name is:{file_name} ")
+            df.to_csv(DIRECTORY+file_name)
     else:
         print("Unsupported file type. Please choose JSON or CSV.")
 
