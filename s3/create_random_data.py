@@ -71,7 +71,7 @@ if __name__ == "__main__":
         for i in range(args.file_number):
             data = generate_bmw_telemetry()
             df = pd.DataFrame.from_dict(data)
-            file_name =f"generated_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{i}.json"
+            file_name =f"generated_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{i}.jsonl"
             print(f"File name is:{file_name} ")
             df.to_json(DIRECTORY+file_name, orient="records", lines=True)
     elif args.file_format.upper() == "CSV":

@@ -57,7 +57,8 @@ if __name__ == "__main__":
         print(f"Bucket {bucket_name} is ready for use.")
     """ 
     #Connect to the s3 client
-    s3_client = boto3.client("s3")
+    session = boto3.Session(profile_name="trinta") 
+    s3_client = session.client("s3")
     BUCKET_NAME = "learn-aws-ab8e1d2f-5afa-4fa5-bf7f-e0121838c350"
     
     #import each file individually
