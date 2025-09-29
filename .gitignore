@@ -1,3 +1,10 @@
+#ignore files from s3
 s3/files
 
+#ignore terraform configs
+terraform/.terraform/*
+terraform/*.hcl
+terraform/*.info
+terraform/*.tfstate
+terraform/*.backup
 info.txt
