@@ -8,7 +8,8 @@ This project implements a simple S3 to RDS pipeline that uses an AWS Lambda func
 
 The pipeline was built using **AWS Cloud** services. The architecture is as follows:
 
-<img width="812" height="163" alt="architecture" src="https://github.com/user-attachments/assets/23f20cdd-583d-479d-9bd5-b910719783bd" />
+<img width="991" height="341" alt="architecture (1)" src="https://github.com/user-attachments/assets/49447977-25dd-4e21-a4d8-4b9e0610e30a" />
+
 
 ### Data Generation and Ingress
 
