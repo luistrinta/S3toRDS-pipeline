@@ -7,4 +7,3 @@ terraform/*.hcl
 terraform/*.info
 terraform/*.tfstate
 terraform/*.backup
-info.txt
