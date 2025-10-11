@@ -89,9 +89,9 @@ if __name__ == "__main__":
         for i in range(args.file_number):
             data = generate_bmw_telemetry(num_records=args.record_number)
             df = pd.DataFrame.from_dict(data)
-            file_name =f"generated_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{i}.jsonl"
+            file_name =f"generated_data_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{i}.json"
             logger.info(f"File name is:{file_name} ")
-            df.to_json(f"{DIRECTORY}/{file_name}", orient="records", lines=True)
+            df.to_json(f"{DIRECTORY}/{file_name}", orient="records", lines=False)
     elif args.file_format.upper() == "CSV":
         for i in range(args.file_number):       
             data = generate_bmw_telemetry(num_records=args.record_number)     
